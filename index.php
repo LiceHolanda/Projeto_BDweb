@@ -47,9 +47,19 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Login</title>
 </head>
 <body>
+    <style>
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: linear-gradient(45deg, cyan, yellow);
+        }
+
+</style>
+
     <h1>Acesse sua conta</h1>
     <form action="" method="POST">
         <p>

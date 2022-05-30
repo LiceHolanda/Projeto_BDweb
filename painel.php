@@ -23,7 +23,7 @@ p.main { text-indent: 50px; text-align: justify; white-space: pre;
 </style>
 </head>
 
-<h1>ENCONTRE AQUI A LISTA DE EXERCÍCIOS QUE VOCÊ PRECISAa !</h1>
+<h1>ENCONTRE AQUI A LISTA DE EXERCÍCIOS QUE VOCÊ PRECISA !</h1>
 
 </body>
 

@@ -19,14 +19,13 @@ if(isset($_POST['submit']))
 
     $nome = $_POST['nome'];
     $email = $_POST['email'];
-    $senha = $_POST['senha'];
     $telefone = $_POST['telefone'];
     $senha = $_POST['senha'];
     $sexo = $_POST['genero'];
     $data_nasc = $_POST['data_nascimento'];
 
-    $result = mysqli_query($conexao, "INSERT INTO login(nome,senha,email,telefone,senha,sexo,data_nasc) 
-    VALUES ('$nome','$senha','$email','$telefone','$senha,'$sexo','$data_nasc')");
+    $result = $mysqli->query("INSERT INTO login(nome,email,telefone,senha,sexo,data_nasc) VALUES ('$nome','$email','$telefone','$senha,'$sexo','$data_nasc')");
+    
 
     header('Location: index.php');
 }

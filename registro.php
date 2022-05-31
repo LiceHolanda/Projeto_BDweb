@@ -1,24 +1,35 @@
 <?php
 
-    if(!isset($_SESSION)) {
-    session_start();
-    }
+if(isset($_POST['submit']))
+{
+   // print_r('Nome: ' . $_POST['nome']);
+   // print_r('<br>');
+   // print_r('Email: ' . $_POST['email']);
+   // print_r('<br>');
+   // print_r('Telefone: ' . $_POST['telefone']);
+   // print_r('<br>');
+   // print_r('Senha: ' . $_POST['senha']);
+   // print_r('<br>');
+   // print_r('Sexo: ' . $_POST['genero']);
+   // print_r('<br>');
+   // print_r('Data de nascimento: ' . $_POST['data_nascimento']);
+   // print_r('<br>');
 
-    if(isset($_POST['submit'])){
+    include_once('conexao.php');
 
-        include_once('conexao.php');
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
+    $telefone = $_POST['telefone'];
+    $senha = $_POST['senha'];
+    $sexo = $_POST['genero'];
+    $data_nasc = $_POST['data_nascimento'];
 
-        $nome = $_POST['nome'];
-        $email = $_POST['email'];
-        $telefone = $_POST['telefone'];
-        $senha = $_POST['senha'];
-        $sexo = $_POST['genero'];
-        $data_nasc = $_POST['data_nascimento'];
-        
+    $result = mysqli_query($conexao, "INSERT INTO login(nome,senha,email,telefone,senha,sexo,data_nasc) 
+    VALUES ('$nome','$senha','$email','$telefone','$senha,'$sexo','$data_nasc')");
 
-        $result = mysqli_query($mysqli, "INSERT INTO 'login'(nome,email,telefone,senha,genero,data_nascimento)
-        VALUES ('$nome','$email','$telefone','$senha','$sexo','$data_nascimento')");
-    }
+    header('Location: index.php');
+}
 
 ?>
 <!DOCTYPE html>
@@ -27,7 +38,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário | GN</title>
+    <title>Formulário</title>
     <style>
         body{
             font-family: Arial, Helvetica, sans-serif;
@@ -103,7 +114,7 @@
 </head>
 <body>
     <div class="box">
-        <form action="" method="POST">
+        <form action="registro.php" method="POST">
                 <h1>Registro</h1>
                 <br>
                 <div class="inputBox">

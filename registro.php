@@ -12,7 +12,7 @@ if(isset($_POST['submit']))
     
     $usuario = 'root';
     $password = '';
-    $database = 'login';
+    $database = 'listas_cet';
     $host = 'localhost';
     
     // Create connection
@@ -35,7 +35,6 @@ if(isset($_POST['submit']))
 }
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

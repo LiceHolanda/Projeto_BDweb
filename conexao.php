@@ -2,7 +2,7 @@
 
 $usuario = 'root';
 $password = '';
-$database = 'login';
+$database = 'listas_cet';
 $host = 'localhost';
 
 $mysqli = new mysqli($host, $usuario, $password, $database);
@@ -10,8 +10,8 @@ $mysqli = new mysqli($host, $usuario, $password, $database);
 if($mysqli->error) {
     die("Falha ao conectar ao banco de dados: " . $mysqli->error);
 }
-//else{
-//    echo "Conexao ok";
-//
-//}
-?>
+/*else{
+    echo "Conexao ok";
+
+}
+?> */

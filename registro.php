@@ -24,7 +24,7 @@ if(isset($_POST['submit']))
     $sexo = $_POST['genero'];
     $data_nasc = $_POST['data_nascimento'];
 
-    $result = $mysqli->query("INSERT INTO login(nome,email,telefone,senha,sexo,data_nasc) VALUES ('$nome','$email','$telefone','$senha,'$sexo','$data_nasc')");
+    $result = $mysqli->query("INSERT INTO listas_cet(nome,email,telefone,senha,sexo,data_nasc) VALUES ('$nome','$email','$telefone','$senha,'$sexo','$data_nasc')");
 
     header('Location: index.php');
 }

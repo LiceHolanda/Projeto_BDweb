@@ -2,7 +2,7 @@
 
 $usuario = 'root';
 $senha = '';
-$database = 'listas_cet';
+$database = 'login';
 $host = 'localhost';
 
 $mysqli = new mysqli($host, $usuario, $senha, $database);

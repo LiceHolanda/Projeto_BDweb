@@ -2,34 +2,40 @@
 
 if(isset($_POST['submit']))
 {
-   // print_r('Nome: ' . $_POST['nome']);
-   // print_r('<br>');
-   // print_r('Email: ' . $_POST['email']);
-   // print_r('<br>');
-   // print_r('Telefone: ' . $_POST['telefone']);
-   // print_r('<br>');
-   // print_r('Senha: ' . $_POST['senha']);
-   // print_r('<br>');
-   // print_r('Sexo: ' . $_POST['genero']);
-   // print_r('<br>');
-   // print_r('Data de nascimento: ' . $_POST['data_nascimento']);
-   // print_r('<br>');
 
-    include_once('conexao.php');
-
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
+    $nome = $_POST["nome"];
+    $email = $_POST["email"];
     $telefone = $_POST['telefone'];
-    $senha = $_POST['senha'];
-    $sexo = $_POST['genero'];
+    $senha = sha1($_POST["senha"]);
+    $sexo = $_POST['sexo'];
     $data_nasc = $_POST['data_nascimento'];
-
-    $result = $mysqli->query("INSERT INTO listas_cet(nome,email,telefone,senha,sexo,data_nasc) VALUES ('$nome','$email','$telefone','$senha,'$sexo','$data_nasc')");
-
-    header('Location: index.php');
+    
+    $usuario = 'root';
+    $senha = '';
+    $database = 'login';
+    $host = 'localhost';
+    
+    // Create connection
+    $conn = new mysqli($host, $usuario, $senha, $database);
+    // Check connection
+    if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }
+    
+    $sql = "INSERT INTO usuario (nome, email, telefone, senha, sexo, data_nascimento) VALUES ('".$nome."', '".$email."', '".$telefone."', '".$senha."', '".$sexo."', '".$data_nasc."')";
+    
+    if ($conn->query($sql) === TRUE) {
+        header('Location:index.php?msg= Usuario cadastrado com sucesso!!');
+        exit;
+    } else {
+      echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+    
+    $conn->close();
 }
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -135,13 +141,13 @@ if(isset($_POST['submit']))
                     <label for="senha" class="labelInput">senha</label>
                 </div>
                 <p>Sexo:</p>
-                <input type="radio" id="feminino" name="genero" value="feminino" required>
+                <input type="radio" id="feminino" name="sexo" value="feminino" required>
                 <label for="feminino">Feminino</label>
                 <br>
-                <input type="radio" id="masculino" name="genero" value="masculino" required>
+                <input type="radio" id="masculino" name="sexo" value="masculino" required>
                 <label for="masculino">Masculino</label>
                 <br>
-                <input type="radio" id="outro" name="genero" value="outro" required>
+                <input type="radio" id="outro" name="sexo" value="outro" required>
                 <label for="outro">Outro</label>
                 <br><br>
                 <label for="data_nascimento"><b>Data de Nascimento:</b></label>

@@ -10,7 +10,7 @@ if(isset($_POST['submit']))
     $sexo = $_POST['sexo'];
     $data_nasc = $_POST['data_nascimento'];
     
-    $usuario = 'root';
+    $usuario = 'root';r
 $senha = '';
 $database = 'listas_cet';
 $host = 'localhost';

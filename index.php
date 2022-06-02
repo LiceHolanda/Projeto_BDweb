@@ -14,7 +14,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])) {
 
 //verificar esse login e essa senha
 
-        $sql_code = "SELECT * FROM usuarios WHERE email = '$email' AND senha = '$senha'";
+        $sql_code = "SELECT * FROM usuario WHERE email = '$email' AND senha = '$senha'";
         $sql_query = $mysqli->query($sql_code) or die("Falha na execução do código SQL: " . $mysqli->error);
 //verificar se a qtde de registros q essa consulta retornou eh 1
 

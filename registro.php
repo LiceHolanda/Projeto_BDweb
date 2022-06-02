@@ -6,17 +6,17 @@ if(isset($_POST['submit']))
     $nome = $_POST["nome"];
     $email = $_POST["email"];
     $telefone = $_POST['telefone'];
-    $senha = sha1($_POST["senha"]);
+    $senha = $_POST["senha"];
     $sexo = $_POST['sexo'];
     $data_nasc = $_POST['data_nascimento'];
     
     $usuario = 'root';
-    $senha = '';
-    $database = 'login';
+    $password = '';
+    $database = 'listas_cet';
     $host = 'localhost';
     
     // Create connection
-    $conn = new mysqli($host, $usuario, $senha, $database);
+    $conn = new mysqli($host, $usuario, $password, $database);
     // Check connection
     if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
@@ -35,7 +35,6 @@ if(isset($_POST['submit']))
 }
 
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

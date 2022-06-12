@@ -76,6 +76,9 @@
         #submit:hover{
             background-image: linear-gradient(to right,rgb(0, 80, 172), rgb(80, 19, 195));
         }
+        a{
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -116,7 +119,11 @@
                 <input type="date" name="data_nascimento" id="data_nascimento" required>
                 <br><br>
                 <input type="submit" name="submit" id="submit">
+        <nav>
+            <ul>
                 <a href='index.php'>Voltar</a>
+            </ul>
+        </nav>
         </form>
     </div>
 </body>

@@ -20,16 +20,6 @@
             border-radius: 15px;
             color: white;
         }
-        fieldset{
-            border: 3px solid dodgerblue;
-        }
-        legend{
-            border: 1px solid dodgerblue;
-            padding: 10px;
-            text-align: center;
-            background-color: dodgerblue;
-            border-radius: 8px;
-        }
         .inputBox{
             position: relative;
         }

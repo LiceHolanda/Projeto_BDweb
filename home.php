@@ -124,7 +124,7 @@ acadêmica com imensas quantidades de exercícios a cada semestre.
 Aqui você pode encontrar modelos antigos de listas aplicadas fazendo
 uma busca por disciplina, professor, unidade e ano em que ela foi aplicada.  </p>
    
-<p style="text-align: center;"><b>Link para solicitações:</b> <a href="https://www.w3schools.com"> ¯\_(ツ)_/¯</a></p>   
+<p style="text-align: center;"><b>Link para solicitações:</b> <a href=""> Solicitações</a></p>   
 
 
 </body>

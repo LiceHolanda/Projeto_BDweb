@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -90,7 +88,7 @@ if(isset($_GET['msg'])) {
 <form action="" method= "POST">
 
     <div class="login">
-        <h1>♡ CRUD</h1>
+        <h1>CRUD</h1>
 
         <ul>
         

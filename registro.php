@@ -1,40 +1,3 @@
-<?php
-
-if(isset($_POST['submit']))
-{
-
-    $nome = $_POST["nome"];
-    $email = $_POST["email"];
-    $telefone = $_POST['telefone'];
-    $senha = $_POST["senha"];
-    $sexo = $_POST['sexo'];
-    $data_nasc = $_POST['data_nascimento'];
-    
-    $usuario = 'root';
-    $password = '';
-    $database = 'listas_cet';
-    $host = 'localhost';
-    
-    // Create connection
-    $conn = new mysqli($host, $usuario, $password, $database);
-    // Check connection
-    if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-    }
-    
-    $sql = "INSERT INTO usuario (nome, email, telefone, senha, sexo, data_nascimento) VALUES ('".$nome."', '".$email."', '".$telefone."', '".$senha."', '".$sexo."', '".$data_nasc."')";
-    
-    if ($conn->query($sql) === TRUE) {
-        header('Location:index.php?msg= Usuario cadastrado com sucesso!!');
-        exit;
-    } else {
-      echo "Error: " . $sql . "<br>" . $conn->error;
-    }
-    
-    $conn->close();
-}
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -117,8 +80,8 @@ if(isset($_POST['submit']))
 </head>
 <body>
     <div class="box">
-        <form action="registro.php" method="POST">
-                <h1>Registro</h1>
+        <form action="salvar.php" method="POST">
+                <h1>Cadastro</h1>
                 <br>
                 <div class="inputBox">
                     <input type="text" name="nome" id="nome" class="inputUser" required>
@@ -153,6 +116,7 @@ if(isset($_POST['submit']))
                 <input type="date" name="data_nascimento" id="data_nascimento" required>
                 <br><br>
                 <input type="submit" name="submit" id="submit">
+                <a href='index.php'>Voltar</a>
         </form>
     </div>
 </body>

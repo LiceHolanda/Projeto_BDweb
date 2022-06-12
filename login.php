@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,16 +7,19 @@
     <title>Projeto </title> 
 
 
-
-
     <style>
         body{
-
-            
 
             font-family: Arial, Helvetica, sans-serif;
             background-image: linear-gradient(45deg, cyan, yellow);
 
+            <span>
+        <?php
+            if($_GET['msg']) {
+                echo $_GET['msg'].'</br>';
+            }
+        ?>
+    </span>
 
         }
         .login{
@@ -43,7 +44,6 @@
             font-size: 15px;
             width: 100%;
             letter-spacing: 2px;
-
         }
         .labelInput{
             position: absolute;
@@ -79,28 +79,34 @@
 <body>
 
 
-<span>
-    <?php
-if(isset($_GET['msg'])) {
-    echo $_GET['msg'].'</br>';
-}
-    ?>
-</span>
 
-<form action="" method= "POST">
+<form action="validar_usuario.php" method= "POST">
 
     <div class="login">
-        <h1>♡ CRUD</h1>
+        <h1>Login</h1>
 
-        <ul>
         
-                <a href="login.php">Login</a> </br>
-                <a href="cadastro.php">Cadastre-se</a>
-                            
-                    </ul>
+
+        <div class="inputBox">
+                    <input type="text" name="email" id="email" class="inputUser" required>
+                    <label for="email" class="labelInput">E-mail</label>
+                </div>
+        <br><br>
+        <div class="inputBox">
+        <input type="password" name="senha" id="senha" class="inputUser" required>
+                    <label for="senha" class="labelInput">senha</label>
+                </div>
+                <br>
 
     
-          
+        <button type="submit">Enviar</button>
+        <nav>
+            <ul>
+           
+                    <a href="index.php">Voltar</a>
+
+                  
+            </ul>
         </nav>
     </div>
     </form>
